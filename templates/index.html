@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- Coding by CodingNepal || www.codingnepalweb.com -->
+<html lang="en">
+
+<head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <!-- Boxicons CSS -->
+     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+     <title>Side Navigation Bar in HTML CSS JavaScript</title>
+     <link rel="stylesheet" href="../static/css.css" />
+     <link rel="stylesheet" href="../static/js.js" />
+</head>
+
+<body>
+     <!-- navbar -->
+     <nav class="navbar">
+          <div class="logo_item">
+               <i class="bx bx-menu" id="sidebarOpen"></i>
+               <img src="../static/pic/logo.PNG" alt=""></i>Dashboard
+          </div>
+
+          <div style="color:#c8bfbf; border-radius: 15%; border-left: 3px solid #c8bfbf; padding-left: 33px;" >
+              <div><h2 >Dashboard de l'université</h2></div>  
+          </div>
+
+          <div class="navbar_content">
+               <i class="bi bi-grid"></i>
+
+               <button class="btn-actualiser" onclick="actualiser()">Actualiser</button>
+               <!-- <img src="images/profile.jpg" alt="" class="profile" /> -->
+          </div>
+     </nav>
+    <!-- dahsboard -->
+
+   <div  id="gr" class="container">
+
+
+
+     <div    class="dashp1">
+          <!-- Axe 1: Un graphique sous forme de barres pour analyser le nombre d’étudiants par années -->
+          <div class="dsh1_1">
+               <div class="card-header">
+                    <p>Nombre d’étudiants par années</p>
+               </div>
+               <canvas id="bar-chart" width="516px" height="250" style="margin-top: 60px; margin-left: 100px;"></canvas>
+          </div>
+          <!-- Axe 2: Un graphique sous forme de courbe pour analyser l’évolution du nombre d’étudiants dans  une spécialité, par années. -->
+          <div style="margin-left: 19px;" class="dsh1_2">
+               <div style="position: relative; margin-bottom: 27px; padding: 0;"  class="card-header">
+                    <p>L’évolution du nombre d’étudiants dans spécialitées, par années</p>
+               </div>
+            <canvas id="line-chart" height="250" width="700"></canvas>
+          </div>
+
+     </div>
+
+     <div style="margin-top: -74px;" class="dashp1">
+          <div class="dsh1_1">
+               <div style="position: relative; margin-bottom: 27px; padding: 13px;"  class="card-header">
+                    <p>Nombre d'étudiants ajourné par année</p>
+               </div>
+               <canvas id="pie-chart" height="210" width="619px"></canvas>
+          </div>
+          <!--  -->
+          <div style="margin-left: 16px;" class="dsh1_2">
+               <div style="position: relative; margin-bottom: 27px; padding: 0;" class="card-header">
+                    <p>Nombre d'étudiants admis de chaque spécialité au cours des 3 années</p>
+               </div>
+               <canvas id="doughnut-chart" width="700" height="350"></canvas>
+          </div>
+
+
+     </div>
+
+    </div>
+
+     <!-- sidebar -->
+     <nav class="sidebar">
+          <div class="menu_content">
+               <ul class="menu_items">
+                    <div style="margin: 7px 0;" class="menu_title menu_dahsboard"></div>
+                    <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+                    <!-- start -->
+                    <li class="item">
+                         <div href="#" class="nav_link submenu_item">
+                              <span class="navlink_icon">
+                                   <i class="bx bx-home-alt"></i>
+                              </span>
+
+                              <span class="navlink">Accueil</span>
+                              <i class="bx bx-chevron-right arrow-left"></i>
+                         </div>
+
+                         <ul class="menu_items submenu">
+                              <button style="font-size: 18px;" class="nav_link sublink" onclick="actualiser()">Main Dahsboard</button>
+                         </ul>
+                    </li>
+                    <!-- end -->
+
+                    <!-- duplicate this li tag if you want to add or remove  navlink with submenu -->
+                    <!-- start -->
+                    <li class="item">
+                         <div href="#" class="nav_link submenu_item">
+                              <span class="navlink_icon">
+                                   <i class="bx bx-grid-alt"></i>
+                              </span>
+                              <span  class="navlink">Les Etudiants</span>
+                              <i class="bx bx-chevron-right arrow-left"></i>
+                         </div>
+
+                         <ul class="menu_items submenu">
+                              <button style="font-size: 18px;"  class="nav_link sublink"  onclick="Afficher('a')">2019</button>
+
+                              <button style="font-size: 18px;" class="nav_link sublink" onclick="Afficher('b')">2020</button>
+                              <button style="font-size: 18px;" class="nav_link sublink" onclick="Afficher('c')">2021</button>
+
+                         </ul>
+                    </li>
+                    <!-- end -->
+               </ul>
+
+               <!-- Sidebar Open / Close -->
+               <div style="margin-bottom: 20%;border-radius: 10px;" class="bottom_content">
+                    <div class="bottom expand_sidebar">
+                         <span> Expand</span>
+                         <i class='bx bx-log-in'></i>
+                    </div>
+                    <div class="bottom collapse_sidebar">
+                           <span> Collapse</span>
+                         <i class='bx bx-log-out'></i>
+                    </div>
+               </div>
+          </div>
+     </nav>
+     <!-- JavaScript -->
+     <script src="../static/js.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</body>
+
+</html>
